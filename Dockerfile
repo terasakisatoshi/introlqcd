@@ -9,4 +9,4 @@ RUN pip3 install jupytext ipykernel nbconvert
 ENV JULIA_PROJECT=@.
 
 RUN julia -e 'using Pkg; Pkg.add("IJulia"); Pkg.build()'
-RUN julia -e 'using Pkg; Pkg.add(["CSV", "DataFrames", "LatticeQCD", "Plots"])'
+RUN julia -e 'using Pkg; Pkg.add(["CSV", "DataFrames", "LatticeQCD", "Plots"]); Pkg.precompile()'
